@@ -1,4 +1,6 @@
 /* common.css */
+.logo_icon{margin-right: 0.5rem;}
+.logo_title{vertical-align: middle;}
 
 
 main > .container {
@@ -17,3 +19,43 @@ main > .container {
 code {
   font-size: 80%;
 }
+
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* mobile */
+@media (max-width: 768px) { 
+  .logo_title{
+    font-size: 1.1rem;
+  }
+}
+/* not mobile */
+@media (min-width: 768px) {
+  #navbarsMain{
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 0;
+  }
+  .btn-nav {
+    color: #fff;
+    background-color: #343A40;
+    border-color: #343A40;
+  }
+  .active .btn-nav{
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+

@@ -1,10 +1,14 @@
 /* common.css */
+*{ font-family: 'NanumGothic','Malgun Gothic', Arial ; font-weight: 400; }
+
+nav{height:80px;}
 .logo_icon{margin-right: 0.5rem;}
-.logo_title{vertical-align: middle;}
+.logo_title{vertical-align: middle; font-weight: 500; font-size: 1.1rem;}
 
 
 main > .container {
-  padding: 60px 15px 0;
+  margin-top: 80px;
+  padding: 0 15px;
 }
 
 .footer {
@@ -30,18 +34,16 @@ code {
   user-select: none;
 }
 
-/* mobile */
-@media (max-width: 768px) { 
-  .logo_title{
-    font-size: 1.1rem;
-  }
-}
-/* not mobile */
+
+/* not mobile(pc) */
 @media (min-width: 768px) {
   #navbarsMain{
     display: flex;
     justify-content: flex-end;
     flex-grow: 0;
+  }
+  .nav-item {
+    margin-left: 10px;
   }
   .btn-nav {
     color: #fff;
@@ -59,3 +61,7 @@ code {
 }
 
 
+/* mobile */
+@media (max-width: 768px) { 
+  
+}

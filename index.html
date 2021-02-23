@@ -27,19 +27,33 @@
     <meta name="msapplication-TileImage" content="asset/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
   
-    <!-- Bootstrap core CSS -->
+    <!-- Jquery-ui CSS (datepicker) -->
+    <link href="lib/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="lib/bootstrap-4.6.0/dist/css/bootstrap.min.css">
-  
-    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="lib/bootstrap-icons-1.3.0/bootstrap-icons.css">
+
+    <!-- Fontawesome -->
+    <link href="lib/fontawesome-free-5.15.2-web/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="asset/css/common.css">
 
-    <!-- Fonts -->
+    <!-- Fonts CSS -->
     <link rel="stylesheet" href="asset/fonts/fonts.css">
+
+    <!-- Chart.js CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js" integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
 </head>
 
 <body class="d-flex flex-column h-100">
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container">
+
+  <!-- START::MAIN HEADER -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <div class="container-lg">
       <a class="navbar-brand" href="index.html"><img class="logo_icon" src="asset/images/icon-awesome-notes-medical.svg" alt="logo icon"/><span class="logo_title">만성질환 돌봄서비스</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsMain" aria-controls="navbarsMain" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -62,25 +76,296 @@
       </div>
     </div>
   </nav>
+  <!-- END::MAIN HEADER -->
 
+  <!-- START::MAIN BODY -->
   <main role="main" class="flex-shrink-0">
-    <div class="container">
-      <h1>Navbar example</h1>
-      <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser’s viewport.</p>
-      
-    </div>
-  </main>
+    
+    <!-- START::PATIENT INFO -->
+    <div class="patient container-fluid">
+      <div class="container-lg">
+        <div class="row">
+          <div class="col col-lg-12">
+            <i class="icon_patient bi bi-person-circle"></i> <span class="title_patient">환자정보</span>
+          </div>
+        </div>
 
+        <hr/>
+        
+        <div class="row justify-content-md-center">
+          <div class="col col-lg-12">
+            
+            <!-- START::PC PATIENT INFO -->
+            <table class="tbl_patient size_pc">
+              <colgroup>
+                <col width="12%">
+                <col width="15%">
+                <col width="10%">
+                <col width="20%">
+                <col width="10%">
+                <col width="">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>이름</th>
+                  <td>홍길동(M)</td>
+                  <th>진료과</th>
+                  <td>소화기내과</td>
+                  <th>연락처</th>
+                  <td>010-0000-0000</td>
+                </tr>
+                <tr>
+                  <th>생년월일</th>
+                  <td>20201030</td>
+                  <th rowspan="2">진료의</th>
+                  <td rowspan="2">허균</td>
+                  <th rowspan="2">주소</th>
+                  <td rowspan="2">부산시 수성구 수성1로 11 수성아파트 1111호</td>
+                </tr>
+                <tr>
+                  <th>병원안여부</th>
+                  <td>Y</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- END::PC PATIENT INFO -->
+
+            <!-- START::MOBILE PATIENT INFO -->
+            <table class="tbl_patient size_mb">
+              <colgroup>
+                <col width="30%">
+                <col width="">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>이름</th>
+                  <td>홍길동(M)</td>
+                </tr>
+                <tr>
+                  <th>생년월일</th>
+                  <td>20201030</td>
+                </tr>
+                <tr>
+                  <th>진료과</th>
+                  <td>소화기내과</td>
+                </tr>
+                <tr>
+                  <th>진료의</th>
+                  <td>허균</td>
+                </tr>
+                <tr>
+                  <th>병원안여부</th>
+                  <td>Y</td>
+                </tr>
+                <tr>
+                  <th>연락처</th>
+                  <td>010-0000-0000</td>
+                </tr>
+                <tr>
+                  <th>주소</th>
+                  <td>부산시 수성구 수성1로 11 수성아파트 1111호</td>
+                </tr>
+                
+              </tbody>
+            </table>
+            <!-- END::MOBILE PATIENT INFO -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- END::PATIENT INFO -->
+
+    <!-- START::PAGE TITLE -->
+    <div class="page_title">
+      <div class="container-lg">
+        <p id="#pTitle">혈압 정보</p>
+      </div>
+    </div>
+    <!-- END::PAGE TITLE -->
+
+    <!-- START::PAGE CONTENTS -->
+    <div class="page_contents">
+      <div class="container-lg">
+        
+        <form class="mb-20">
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <select class="custom-select" id="dateToggle">
+                <option value="1" selected>1개월</option>
+                <option value="3">3개월</option>
+                <option value="6">6개월</option>
+                <option value="all">전체</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <div class="input-group input-group-datepicker">
+                <input type="text" id="datepicker1" class="form-control" placeholder="시작일자" />
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+              <div class="input-group input-group-datepicker">
+                <input type="text" id="datepicker2" class="form-control" placeholder="종료일자" />
+              </div>
+            </div>
+            <div class="form-group col-md-2">
+              <button class="btn btn-block btn-dark">조회</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="wrapp-accordion">
+
+          <div class="accordion" id="accordion_1">
+            <div class="card">
+              <div class="card-header" id="acco_head_1">
+                <h2 class="mb-0">
+                  <button class="btn btn-dark btn-block text-left" type="button" data-toggle="collapse" data-target="#acco_body_1" aria-expanded="true" aria-controls="acco_body_1">
+                    최근 혈압 측정치(mg/dL)
+                  </button>
+                </h2>
+              </div>
+              <div id="acco_body_1" class="collapse show" aria-labelledby="acco_head_1" data-parent="#accordion_1">
+                <div class="card-body card-table">
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th width="20%">일자</th>
+                      <th>측정 시간</th>
+                      <th>측정 값</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td rowspan="3">20210101</td>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+                    <tr>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+                    <tr>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+
+                    <tr>
+                      <td rowspan="3">20210101</td>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+                    <tr>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+                    <tr>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+
+                    <tr>
+                      <td rowspan="3">20210101</td>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+                    <tr>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+                    <tr>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+
+                    <tr>
+                      <td rowspan="3">20210101</td>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+                    <tr>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+                    <tr>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+                    
+                    <tr>
+                      <td rowspan="3">20210101</td>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+                    <tr>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+                    <tr>
+                      <td>12:00:00</td>
+                      <td>80</td>
+                    </tr>
+                  </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion" id="accordion_2">
+            <div class="card">
+              <div class="card-header" id="acco_head_2">
+                <h2 class="mb-0">
+                  <button class="btn btn-dark btn-block text-left" type="button" data-toggle="collapse" data-target="#acco_body_2" aria-expanded="true" aria-controls="acco_body_2">
+                    혈압 그래프
+                  </button>
+                </h2>
+              </div>
+              <div id="acco_body_2" class="collapse show" aria-labelledby="acco_head_2" data-parent="#accordion_2">
+                <div class="card-body">
+                  <div class="wrapp_chart" style="width:100%;">
+                    <canvas id="myChart" height="100"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- END::PAGE CONTENTS -->
+
+
+  </main>
+  <!-- END::MAIN BODY -->
+
+  <!-- START::MAIN FOOTER -->
   <footer class="footer mt-auto py-3">
-    <div class="container text-center">
+    <div class="container-lg text-center">
       <span class="text-muted">2021 ⓒ Hiwebnet all rights reserved.</span>
     </div>
   </footer>
+<!-- END::MAIN FOOTER -->
+ 
 
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="lib/bootstrap-4.6.0/site/static/docs/4.6/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
-  <script src="lib/bootstrap-4.6.0/dist/js/bootstrap.min.js"></script>
-        
+<!-- Jquery-ui JS (datepicker) -->
+<script src="lib/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+<script src="lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+<!-- bootstrap JS -->
+<!-- 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="lib/bootstrap-4.6.0/site/static/docs/4.6/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+-->
+<script src="lib/bootstrap-4.6.0/dist/js/bootstrap.min.js"></script>
+
+<!-- Custom JS -->
+<script type="text/javascript" src="asset/js/common.js"></script>
+
+  
 </body>
 </html>

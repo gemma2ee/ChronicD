@@ -64,10 +64,23 @@ main{width: 100%;}
 .accordion .card .card-body {min-height: 200px;}
 .accordion .card .card-body.card-table{padding: 0px;}
 .accordion .card .card-body.card-scroll{min-height: 300px; height:300px; max-height: inherit;overflow: auto; resize: vertical;}
+.accordion .card .table{margin-bottom: 0;}
 .table{text-align: center; border-collapse: collapse;}
-.table td, .table th{padding: .25rem .5rem;vertical-align: middle;}
-.table th{background: linear-gradient( to bottom, #ffffff, #D1D1D1);}
+.table td, .table th{padding: .25rem .5rem;vertical-align: middle; border:1px solid #dee2e6;}
+.table th{
+  background: rgba(0,0,0,.05);
+  background: -moz-linear-gradient(top, #fefefe 0%, #d1d1d1 49%, #dbdbdb 50%, #e2e2e2 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #fefefe), color-stop(49%, #d1d1d1), color-stop(50%, #dbdbdb), color-stop(100%, #e2e2e2));
+  background: -webkit-linear-gradient(top, #fefefe 0%, #d1d1d1 49%, #dbdbdb 50%, #e2e2e2 100%);
+  background: -o-linear-gradient(top, #fefefe 0%, #d1d1d1 49%, #dbdbdb 50%, #e2e2e2 100%);
+  background: -ms-linear-gradient(top, #fefefe 0%, #d1d1d1 49%, #dbdbdb 50%, #e2e2e2 100%);
+  background: linear-gradient(to bottom, #fefefe 0%, #d1d1d1 49%, #dbdbdb 50%, #e2e2e2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e2e2e2', GradientType=0 );
+}
 .table tr:last-child td, .table tr:last-child th{border-bottom: 1px solid #dee2e6;}
+.table-striped tbody tr:nth-of-type(even) {background-color: rgba(0,0,0,.05);}
+.table-striped tbody tr:nth-of-type(odd) {background-color:#ffffff;}
+
 .table-scroll{}
 
 .wrapp_chart{}
@@ -137,7 +150,7 @@ form{}
   .container-lg{padding:0px 15px !important;}
   .size_pc{display: none;}
   .size_mb{display: block;}
-  
+
   .form-row .text-transparent{display: none;}
   form .form-group:last-child{margin-bottom: 0;}
   

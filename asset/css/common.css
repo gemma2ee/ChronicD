@@ -8,6 +8,7 @@
 .pb-20{padding-bottom:20px !important;}
 .bg-main{background: #242939 !important; color: #ffffff !important;}
 .text-transparent{color: transparent !important;}
+.bi::before{vertical-align: middle;}
 body{font-size: 1rem; font-weight: 400; background: #ffffff; color: #444444;}
 .navbar{min-height:80px; background:#242939; padding: 0px;}
 .logo_icon{margin-right: 0.5rem;}
@@ -78,7 +79,6 @@ main{width: 100%;}
 .modal-header .close{color: #ffffff;text-shadow: none;opacity: 1;}
 
 form{}
-.form-row .text-transparent{display: block;}
 
 
 
@@ -128,6 +128,7 @@ form{}
 
   .size_pc{display: block;}
   .size_mb{display: none;}
+  .form-row .text-transparent{display: block;}
 }
 
 
@@ -136,6 +137,8 @@ form{}
   .container-lg{padding:0px 15px !important;}
   .size_pc{display: none;}
   .size_mb{display: block;}
+  
+  .form-row .text-transparent{display: none;}
   form .form-group:last-child{margin-bottom: 0;}
   
 }

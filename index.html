@@ -365,7 +365,7 @@
 
               <!-- 환자번호로 찾기 -->
               <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
-                <div class="container my-2">
+                <div class="container my-3">
                   <form>
                     <!-- required default -->
                     <div class="form-row">
@@ -549,18 +549,19 @@
 
               <!-- 환자번호 모를 경우 -->
               <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab">
-                <div class="container my-2">
+                <div class="container my-3">
                   <form>
                     <!-- required default -->
                     <div class="form-row">
                       <div class="col-md-8 mb-3">
                         <label for="validationServer01">환자성명</label>
-                        <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required> 
+                        <input type="text" class="form-control is-valid" id="validationServer01" required> 
                         <div class="valid-feedback">
                           Looks good!
                         </div>
                       </div>
-                      <div class="col-md-4 mb-3">
+                      <!-- 검색버튼 PC버전 -->
+                      <div class="col-md-4 mb-3 size_pc">
                         <label class="text-transparent">검색</label>
                         <button class="btn btn-block btn-primary" type="submit">검색</button>
                       </div>
@@ -568,19 +569,26 @@
 
                     <!-- required valid example --> 
                     <div class="form-row">
-                      <div class="col-md-6 mb-3">
+                      <div class="col-md-4 mb-3">
                         <label for="validationServer02">환자주민번호</label>
-                        <input type="text" class="form-control is-valid" id="validationServer02" aria-describedby="validationServer02Feedback" required>
+                        <input type="text" class="form-control is-valid" id="validationServer02" aria-describedby="validationServer02Feedback" placeholder="●●●●●●" required>
                         <div id="validationServer02Feedback" class="valid-feedback">
                           Looks good!
                         </div>
                       </div>
-                      <div class="col-md-6 mb-3">
+                      <div class="col-md-4 mb-3">
                         <label class="text-transparent">뒷자리</label>
-                        <input type="text" class="form-control is-invalid" id="validationServer02_1" aria-describedby="validationServer02_1Feedback" required>
+                        <input type="text" class="form-control is-invalid" id="validationServer02_1" aria-describedby="validationServer02_1Feedback" placeholder="●●●●●●●" required>
                         <div id="validationServer02_1Feedback" class="invalid-feedback">
                           Please provide a valid name.
                         </div>
+                      </div>
+                    </div>
+                    <!-- 검색버튼 Mobile버전 -->
+                    <div class="form-row size_mb">
+                      <div class="col-md-12">
+                        <label class="text-transparent">검색</label>
+                        <button class="btn btn-block btn-primary" type="submit">검색</button>
                       </div>
                     </div>
 

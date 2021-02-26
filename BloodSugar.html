@@ -63,7 +63,7 @@
       <div class="collapse navbar-collapse justify-content-md-end" id="navbarsMain">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link btn btn-nav" href="index.html">혈압</a>
+            <a class="nav-link btn btn-nav" href="BloodPressure.html">혈압</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link btn btn-nav" href="BloodSugar.html">혈당</a>
@@ -81,355 +81,720 @@
 
   <!-- START::MAIN BODY -->
   <main role="main" class="flex-shrink-0">
-    
-    <!-- START::PATIENT INFO -->
-    <div class="patient container-fluid">
-      <div class="container-lg">
-        <div class="row">
-          <div class="col col-12">
-            <i class="icon_patient bi bi-person-circle"></i> <span class="title_patient">환자정보</span>
-          </div>
-        </div>
+    <div class="page_container">
+      <div class="page_container_inner">
+         <!-- START::PATIENT INFO -->
+         <div class="patient container-fluid">
+          <div class="container-lg">
+            <div class="row">
+              <div class="col col-6">
+                <i class="icon_patient bi bi-person-circle"></i> <span class="title_patient">환자정보</span>
+              </div>
+              <div class="col col-6 text-right">
+                <button type="button" class="btn btn-secondary btn-pSearch" data-toggle="modal" data-target="#search_patient_modal"><i class="bi bi-search"></i><span>환자찾기</span></button>
+              </div>
+            </div>
 
-        <hr/>
-        
-        <div class="row justify-content-md-center">
-          <div class="col col-12">
+            <hr/>
             
-            <!-- START::PC PATIENT INFO -->
-            <table class="tbl_patient size_pc">
-              <colgroup>
-                <col width="12%">
-                <col width="15%">
-                <col width="10%">
-                <col width="20%">
-                <col width="10%">
-                <col width="">
-              </colgroup>
-              <tbody>
-                <tr>
-                  <th>이름</th>
-                  <td>홍길동(M)</td>
-                  <th>진료과</th>
-                  <td>소화기내과</td>
-                  <th>연락처</th>
-                  <td>010-0000-0000</td>
-                </tr>
-                <tr>
-                  <th>생년월일</th>
-                  <td>20201030</td>
-                  <th rowspan="2">진료의</th>
-                  <td rowspan="2">허균</td>
-                  <th rowspan="2">주소</th>
-                  <td rowspan="2">부산시 수성구 수성1로 11 수성아파트 1111호</td>
-                </tr>
-                <tr>
-                  <th>병원안여부</th>
-                  <td>Y</td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- END::PC PATIENT INFO -->
-
-            <!-- START::MOBILE PATIENT INFO -->
-            <table class="tbl_patient size_mb">
-              <colgroup>
-                <col width="30%">
-                <col width="">
-              </colgroup>
-              <tbody>
-                <tr>
-                  <th>이름</th>
-                  <td>홍길동(M)</td>
-                </tr>
-                <tr>
-                  <th>생년월일</th>
-                  <td>20201030</td>
-                </tr>
-                <tr>
-                  <th>진료과</th>
-                  <td>소화기내과</td>
-                </tr>
-                <tr>
-                  <th>진료의</th>
-                  <td>허균</td>
-                </tr>
-                <tr>
-                  <th>병원안여부</th>
-                  <td>Y</td>
-                </tr>
-                <tr>
-                  <th>연락처</th>
-                  <td>010-0000-0000</td>
-                </tr>
-                <tr>
-                  <th>주소</th>
-                  <td>부산시 수성구 수성1로 11 수성아파트 1111호</td>
-                </tr>
+            <div class="row justify-content-md-center">
+              <div class="col col-12">
                 
-              </tbody>
-            </table>
-            <!-- END::MOBILE PATIENT INFO -->
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <!-- END::PATIENT INFO -->
-
-    <!-- START::PAGE TITLE -->
-    <div class="page_title">
-      <div class="container-lg">
-        <p id="#pTitle">혈당 정보</p>
-      </div>
-    </div>
-    <!-- END::PAGE TITLE -->
-
-    <!-- START::PAGE CONTENTS -->
-    <div class="page_contents">
-      <div class="container-lg">
-        
-        <form class="mb-20">
-          <div class="form-row">
-            <div class="form-group col-md-2">
-              <select class="custom-select" id="dateToggle">
-                <option value="1" selected>1개월</option>
-                <option value="3">3개월</option>
-                <option value="6">6개월</option>
-                <option value="all">전체</option>
-              </select>
-            </div>
-            <div class="form-group col-md-4">
-              <div class="input-group input-group-datepicker">
-                <input type="text" id="datepicker1" class="form-control" placeholder="시작일자" />
-              </div>
-            </div>
-            <div class="form-group col-md-4">
-              <div class="input-group input-group-datepicker">
-                <input type="text" id="datepicker2" class="form-control" placeholder="종료일자" />
-              </div>
-            </div>
-            <div class="form-group col-md-2">
-              <button class="btn btn-block btn-dark">조회</button>
-            </div>
-          </div>
-        </form>
-
-        <div class="wrapp-accordion">
-
-          <div class="accordion" id="accordion_1">
-            <div class="card">
-              <div class="card-header" id="acco_head_1">
-                <h2 class="mb-0">
-                  <button class="btn btn-dark btn-block text-left" type="button" data-toggle="collapse" data-target="#acco_body_1" aria-expanded="true" aria-controls="acco_body_1">
-                    최근 혈당 측정치(mg/dL)
-                  </button>
-                </h2>
-              </div>
-              <div id="acco_body_1" class="collapse show" aria-labelledby="acco_head_1" data-parent="#accordion_1">
-                <div class="card-body card-scroll card-table">
-                  <table class="table table-striped">
-                    <thead>
-                    <tr>
-                      <th width="20%">일자</th>
-                      <th>측정 시간</th>
-                      <th>측정 종류</th>
-                      <th>측정 값</th>
-                    </tr>
-                  </thead>
+                <!-- START::PC PATIENT INFO -->
+                <table class="tbl_patient size_pc">
+                  <colgroup>
+                    <col width="12%">
+                    <col width="15%">
+                    <col width="10%">
+                    <col width="20%">
+                    <col width="10%">
+                    <col width="">
+                  </colgroup>
                   <tbody>
                     <tr>
-                      <td rowspan="4">20210101</td>
-                      <td>11:00:00</td>
-                      <td>식전혈당</td>
-                      <td>80</td>
+                      <th>이름</th>
+                      <td>홍길동(M)</td>
+                      <th>진료과</th>
+                      <td>소화기내과</td>
+                      <th>연락처</th>
+                      <td>010-0000-0000</td>
                     </tr>
                     <tr>
-                      <td>13:00:00</td>
-                      <td>식후혈당</td>
-                      <td>90</td>
+                      <th>생년월일</th>
+                      <td>20201030</td>
+                      <th rowspan="2">진료의</th>
+                      <td rowspan="2">허균</td>
+                      <th rowspan="2">주소</th>
+                      <td rowspan="2">부산시 수성구 수성1로 11 수성아파트 1111호</td>
                     </tr>
                     <tr>
-                      <td>17:00:00</td>
-                      <td>식전혈당</td>
-                      <td>85</td>
+                      <th>병원안여부</th>
+                      <td>Y</td>
                     </tr>
-                    <tr>
-                      <td>19:00:00</td>
-                      <td>식후혈당</td>
-                      <td>95</td>
-                    </tr>
+                  </tbody>
+                </table>
+                <!-- END::PC PATIENT INFO -->
 
+                <!-- START::MOBILE PATIENT INFO -->
+                <table class="tbl_patient size_mb">
+                  <colgroup>
+                    <col width="30%">
+                    <col width="">
+                  </colgroup>
+                  <tbody>
                     <tr>
-                      <td rowspan="4">20210101</td>
-                      <td>11:00:00</td>
-                      <td>식전혈당</td>
-                      <td>80</td>
+                      <th>이름</th>
+                      <td>홍길동(M)</td>
                     </tr>
                     <tr>
-                      <td>13:00:00</td>
-                      <td>식후혈당</td>
-                      <td>90</td>
+                      <th>생년월일</th>
+                      <td>20201030</td>
                     </tr>
                     <tr>
-                      <td>17:00:00</td>
-                      <td>식전혈당</td>
-                      <td>85</td>
+                      <th>진료과</th>
+                      <td>소화기내과</td>
                     </tr>
                     <tr>
-                      <td>19:00:00</td>
-                      <td>식후혈당</td>
-                      <td>95</td>
-                    </tr>
-
-                    <tr>
-                      <td rowspan="4">20210101</td>
-                      <td>11:00:00</td>
-                      <td>식전혈당</td>
-                      <td>80</td>
+                      <th>진료의</th>
+                      <td>허균</td>
                     </tr>
                     <tr>
-                      <td>13:00:00</td>
-                      <td>식후혈당</td>
-                      <td>90</td>
+                      <th>병원안여부</th>
+                      <td>Y</td>
                     </tr>
                     <tr>
-                      <td>17:00:00</td>
-                      <td>식전혈당</td>
-                      <td>85</td>
+                      <th>연락처</th>
+                      <td>010-0000-0000</td>
                     </tr>
                     <tr>
-                      <td>19:00:00</td>
-                      <td>식후혈당</td>
-                      <td>95</td>
-                    </tr>
-
-                    <tr>
-                      <td rowspan="4">20210101</td>
-                      <td>11:00:00</td>
-                      <td>식전혈당</td>
-                      <td>80</td>
-                    </tr>
-                    <tr>
-                      <td>13:00:00</td>
-                      <td>식후혈당</td>
-                      <td>90</td>
-                    </tr>
-                    <tr>
-                      <td>17:00:00</td>
-                      <td>식전혈당</td>
-                      <td>85</td>
-                    </tr>
-                    <tr>
-                      <td>19:00:00</td>
-                      <td>식후혈당</td>
-                      <td>95</td>
-                    </tr>
-
-                    <tr>
-                      <td rowspan="4">20210101</td>
-                      <td>11:00:00</td>
-                      <td>식전혈당</td>
-                      <td>80</td>
-                    </tr>
-                    <tr>
-                      <td>13:00:00</td>
-                      <td>식후혈당</td>
-                      <td>90</td>
-                    </tr>
-                    <tr>
-                      <td>17:00:00</td>
-                      <td>식전혈당</td>
-                      <td>85</td>
-                    </tr>
-                    <tr>
-                      <td>19:00:00</td>
-                      <td>식후혈당</td>
-                      <td>95</td>
-                    </tr>
-
-                    <tr>
-                      <td rowspan="4">20210101</td>
-                      <td>11:00:00</td>
-                      <td>식전혈당</td>
-                      <td>80</td>
-                    </tr>
-                    <tr>
-                      <td>13:00:00</td>
-                      <td>식후혈당</td>
-                      <td>90</td>
-                    </tr>
-                    <tr>
-                      <td>17:00:00</td>
-                      <td>식전혈당</td>
-                      <td>85</td>
-                    </tr>
-                    <tr>
-                      <td>19:00:00</td>
-                      <td>식후혈당</td>
-                      <td>95</td>
+                      <th>주소</th>
+                      <td>부산시 수성구 수성1로 11 수성아파트 1111호</td>
                     </tr>
                     
-
                   </tbody>
-                  </table>
-                </div>
+                </table>
+                <!-- END::MOBILE PATIENT INFO -->
+
               </div>
             </div>
+
           </div>
-
-
-          <div class="accordion" id="accordion_2">
-            <div class="card">
-              <div class="card-header" id="acco_head_2">
-                <h2 class="mb-0">
-                  <button class="btn btn-dark btn-block text-left" type="button" data-toggle="collapse" data-target="#acco_body_2" aria-expanded="true" aria-controls="acco_body_2">
-                    식전 혈당 그래프
-                  </button>
-                </h2>
-              </div>
-              <div id="acco_body_2" class="collapse show" aria-labelledby="acco_head_2" data-parent="#accordion_2">
-                <div class="card-body">
-                  <div class="wrapp_chart" style="width:100%;">
-                    <canvas id="myChart" height="100"></canvas>
-                  </div>
-                </div>
-              </div>              
-            </div>
-          </div>
-
-
-          <div class="accordion" id="accordion_3">
-            <div class="card">
-              <div class="card-header" id="acco_head_3">
-                <h2 class="mb-0">
-                  <button class="btn btn-dark btn-block text-left" type="button" data-toggle="collapse" data-target="#acco_body_3" aria-expanded="true" aria-controls="acco_body_3">
-                    식후 혈당 그래프
-                  </button>
-                </h2>
-              </div>
-              <div id="acco_body_3" class="collapse show" aria-labelledby="acco_head_3" data-parent="#accordion_3">
-                <div class="card-body">
-                  <div class="wrapp_chart" style="width:100%;">
-                    <canvas id="myChart2" height="100"></canvas>
-                  </div>
-                </div>
-              </div>              
-            </div>
-          </div>
-
-
         </div>
+        <!-- END::PATIENT INFO -->
+
+        <!-- START::PAGE TITLE -->
+        <div class="page_title">
+          <div class="container-lg">
+            <p id="#pTitle">혈당 정보</p>
+          </div>
+        </div>
+        <!-- END::PAGE TITLE -->
+
+        <!-- START::PAGE CONTENTS -->
+        <div class="page_contents">
+          <div class="container-lg">
+            
+            <form class="mb-20">
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <select class="custom-select" id="dateToggle">
+                    <option value="1" selected>1개월</option>
+                    <option value="3">3개월</option>
+                    <option value="6">6개월</option>
+                    <option value="all">전체</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <div class="input-group input-group-datepicker">
+                    <input type="text" id="datepicker1" class="form-control" placeholder="시작일자" />
+                  </div>
+                </div>
+                <div class="form-group col-md-4">
+                  <div class="input-group input-group-datepicker">
+                    <input type="text" id="datepicker2" class="form-control" placeholder="종료일자" />
+                  </div>
+                </div>
+                <div class="form-group col-md-2">
+                  <button class="btn btn-block btn-dark">조회</button>
+                </div>
+              </div>
+            </form>
+
+            <div class="wrapp-accordion">
+
+              <div class="accordion" id="accordion_1">
+                <div class="card">
+                  <div class="card-header" id="acco_head_1">
+                    <h2 class="mb-0">
+                      <button class="btn btn-dark btn-block text-left" type="button" data-toggle="collapse" data-target="#acco_body_1" aria-expanded="true" aria-controls="acco_body_1">
+                        최근 혈당 측정치(mg/dL)
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="acco_body_1" class="collapse show" aria-labelledby="acco_head_1" data-parent="#accordion_1">
+                    <div class="card-body card-scroll card-table">
+                      <table class="table table-striped">
+                        <thead>
+                        <tr>
+                          <th width="20%">일자</th>
+                          <th>측정 시간</th>
+                          <th>측정 종류</th>
+                          <th>측정 값</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td rowspan="4">20210101</td>
+                          <td>11:00:00</td>
+                          <td>식전혈당</td>
+                          <td>80</td>
+                        </tr>
+                        <tr>
+                          <td>13:00:00</td>
+                          <td>식후혈당</td>
+                          <td>90</td>
+                        </tr>
+                        <tr>
+                          <td>17:00:00</td>
+                          <td>식전혈당</td>
+                          <td>85</td>
+                        </tr>
+                        <tr>
+                          <td>19:00:00</td>
+                          <td>식후혈당</td>
+                          <td>95</td>
+                        </tr>
+
+                        <tr>
+                          <td rowspan="4">20210101</td>
+                          <td>11:00:00</td>
+                          <td>식전혈당</td>
+                          <td>80</td>
+                        </tr>
+                        <tr>
+                          <td>13:00:00</td>
+                          <td>식후혈당</td>
+                          <td>90</td>
+                        </tr>
+                        <tr>
+                          <td>17:00:00</td>
+                          <td>식전혈당</td>
+                          <td>85</td>
+                        </tr>
+                        <tr>
+                          <td>19:00:00</td>
+                          <td>식후혈당</td>
+                          <td>95</td>
+                        </tr>
+
+                        <tr>
+                          <td rowspan="4">20210101</td>
+                          <td>11:00:00</td>
+                          <td>식전혈당</td>
+                          <td>80</td>
+                        </tr>
+                        <tr>
+                          <td>13:00:00</td>
+                          <td>식후혈당</td>
+                          <td>90</td>
+                        </tr>
+                        <tr>
+                          <td>17:00:00</td>
+                          <td>식전혈당</td>
+                          <td>85</td>
+                        </tr>
+                        <tr>
+                          <td>19:00:00</td>
+                          <td>식후혈당</td>
+                          <td>95</td>
+                        </tr>
+
+                        <tr>
+                          <td rowspan="4">20210101</td>
+                          <td>11:00:00</td>
+                          <td>식전혈당</td>
+                          <td>80</td>
+                        </tr>
+                        <tr>
+                          <td>13:00:00</td>
+                          <td>식후혈당</td>
+                          <td>90</td>
+                        </tr>
+                        <tr>
+                          <td>17:00:00</td>
+                          <td>식전혈당</td>
+                          <td>85</td>
+                        </tr>
+                        <tr>
+                          <td>19:00:00</td>
+                          <td>식후혈당</td>
+                          <td>95</td>
+                        </tr>
+
+                        <tr>
+                          <td rowspan="4">20210101</td>
+                          <td>11:00:00</td>
+                          <td>식전혈당</td>
+                          <td>80</td>
+                        </tr>
+                        <tr>
+                          <td>13:00:00</td>
+                          <td>식후혈당</td>
+                          <td>90</td>
+                        </tr>
+                        <tr>
+                          <td>17:00:00</td>
+                          <td>식전혈당</td>
+                          <td>85</td>
+                        </tr>
+                        <tr>
+                          <td>19:00:00</td>
+                          <td>식후혈당</td>
+                          <td>95</td>
+                        </tr>
+
+                        <tr>
+                          <td rowspan="4">20210101</td>
+                          <td>11:00:00</td>
+                          <td>식전혈당</td>
+                          <td>80</td>
+                        </tr>
+                        <tr>
+                          <td>13:00:00</td>
+                          <td>식후혈당</td>
+                          <td>90</td>
+                        </tr>
+                        <tr>
+                          <td>17:00:00</td>
+                          <td>식전혈당</td>
+                          <td>85</td>
+                        </tr>
+                        <tr>
+                          <td>19:00:00</td>
+                          <td>식후혈당</td>
+                          <td>95</td>
+                        </tr>
+                        
+
+                      </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
 
-        
+              <div class="accordion" id="accordion_2">
+                <div class="card">
+                  <div class="card-header" id="acco_head_2">
+                    <h2 class="mb-0">
+                      <button class="btn btn-dark btn-block text-left" type="button" data-toggle="collapse" data-target="#acco_body_2" aria-expanded="true" aria-controls="acco_body_2">
+                        식전 혈당 그래프
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="acco_body_2" class="collapse show" aria-labelledby="acco_head_2" data-parent="#accordion_2">
+                    <div class="card-body">
+                      <div class="wrapp_chart" style="width:100%;">
+                        <canvas id="myChart" height="100"></canvas>
+                      </div>
+                    </div>
+                  </div>              
+                </div>
+              </div>
+
+
+              <div class="accordion" id="accordion_3">
+                <div class="card">
+                  <div class="card-header" id="acco_head_3">
+                    <h2 class="mb-0">
+                      <button class="btn btn-dark btn-block text-left" type="button" data-toggle="collapse" data-target="#acco_body_3" aria-expanded="true" aria-controls="acco_body_3">
+                        식후 혈당 그래프
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="acco_body_3" class="collapse show" aria-labelledby="acco_head_3" data-parent="#accordion_3">
+                    <div class="card-body">
+                      <div class="wrapp_chart" style="width:100%;">
+                        <canvas id="myChart2" height="100"></canvas>
+                      </div>
+                    </div>
+                  </div>              
+                </div>
+              </div>
+
+
+            </div>
+
+
+            
+          </div>
+
+
+          </div>
+        </div>
+        <!-- END::PAGE CONTENTS -->
       </div>
+    </div>
+    
 
+     <!-- Modal -->
+     <div class="modal fade" id="search_patient_modal" tabindex="-1" aria-labelledby="search_patient_modal_label" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="search_patient_modal_label">환자찾기</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <nav>
+              <div class="nav nav-tabs nav-pills nav-justified" id="nav-tab" role="tablist">
+                <a class="nav-link active" id="nav-1-tab" data-toggle="tab" href="#nav-1" role="tab" aria-controls="nav-1" aria-selected="true">환자번호로 찾기</a>
+                <a class="nav-link" id="nav-2-tab" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-2" aria-selected="false">환자번호 모를 경우</a>  
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+
+              <!-- 환자번호로 찾기 -->
+              <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
+                <div class="container my-3">
+                  <form>
+                    <!-- required default -->
+                    <div class="form-row">
+                      <div class="col-md-8 mb-3">
+                        <label for="validationServer01">환자번호</label>
+                        <input type="text" class="form-control" id="validationServer01" value="Mark" required> 
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label class="text-transparent">검색</label>
+                        <button class="btn btn-block btn-primary" type="submit">검색</button>
+                      </div>
+                    </div>
+
+                    <!-- required valid example --> 
+                    <!--
+                    <div class="form-row">
+                      <div class="col-md-8 mb-3">
+                        <label for="validationServer02">환자번호</label>
+                        <input type="text" class="form-control is-valid" id="validationServer02" aria-describedby="validationServer02Feedback" required>
+                        <div id="validationServer02Feedback" class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label class="text-transparent">검색</label>
+                        <button class="btn btn-block btn-primary" type="submit">검색</button>
+                      </div>
+                    </div>
+                    -->
+
+                    <!-- required invalid example -->
+                    <!--
+                    <div class="form-row">
+                      <div class="col-md-8 mb-3">
+                        <label for="validationServer03">환자번호</label>
+                        <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+                        <div id="validationServer03Feedback" class="invalid-feedback">
+                          Please provide a valid name.
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label class="text-transparent">검색</label>
+                        <button class="btn btn-block btn-primary" type="submit">검색</button>
+                      </div>
+                    </div>
+                    -->
+                    
+                  </form>
+
+
+                  <hr/>
+
+                  <!-- 결과 테이블 -->
+                  <!--
+                  <div>
+                    
+                    <table class="table table-striped">
+                      <colgroup>
+                        <col width="19%">
+                        <col width="20%">
+                        <col width="12%">
+                        <col>
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>환자명</th>
+                          <th>생년월일</th>
+                          <th>성별</th>
+                          <th>주소</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>홍길동</td>
+                          <td>19880101</td>
+                          <td>M</td>
+                          <td>부산시 수성구 수성1로 수성아파트 1234호</td>
+                        </tr>
+                        <tr>
+                          <td>홍길동</td>
+                          <td>19880101</td>
+                          <td>M</td>
+                          <td>부산시 수성구 수성1로 수성아파트 1234호</td>
+                        </tr>
+                        <tr>
+                          <td>홍길동</td>
+                          <td>19880101</td>
+                          <td>M</td>
+                          <td>부산시 수성구 수성1로 수성아파트 1234호</td>
+                        </tr>
+                        <tr>
+                          <td>홍길동</td>
+                          <td>19880101</td>
+                          <td>M</td>
+                          <td>부산시 수성구 수성1로 수성아파트 1234호</td>
+                        </tr>
+                        <tr>
+                          <td>홍길동</td>
+                          <td>19880101</td>
+                          <td>M</td>
+                          <td>부산시 수성구 수성1로 수성아파트 1234호</td>
+                        </tr>
+                        <tr>
+                          <td>홍길동</td>
+                          <td>19880101</td>
+                          <td>M</td>
+                          <td>부산시 수성구 수성1로 수성아파트 1234호</td>
+                        </tr>
+                      </tbody>
+                      
+                    </table>
+
+
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+        
+        
+        
+                  </div>
+                  -->
+
+                  <!-- 검색 전 or 검색 오류 (기존 테이블에 tr만 아래 것 붙여넣기. and 데이터 검색 상황별로 문구 p 나타나게...) -->
+                  <div>
+                    <table class="table table-striped">
+                      <colgroup>
+                        <col width="20%">
+                        <col width="20%">
+                        <col width="11%">
+                        <col>
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>환자명</th>
+                          <th>생년월일</th>
+                          <th>성별</th>
+                          <th>주소</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="4">
+                            <!-- at modal open -->
+                            <p class="my-4"><i class="bi bi-search h3 mr-2"></i> 환자정보를 입력해주세요.</p>
+                            <!-- at no data -->
+                            <!-- <p class="my-4"><i class="bi bi-folder-x h3 mr-2"></i> 입력하신 정보와 일치하는 환자가 없습니다.</p> -->
+                            <!-- at error -->
+                            <!-- <p class="my-4"><i class="bi bi-exclamation-triangle h3 mr-2"></i> 알 수 없는 오류가 발생했습니다.</p> -->
+                            
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                      
+                    </table>
+
+                  </div>
+
+                </div>
+
+
+              </div>
+
+
+              <!-- 환자번호 모를 경우 -->
+              <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab">
+                <div class="container my-3">
+                  <form>
+                    <!-- required default -->
+                    <div class="form-row">
+                      <div class="col-md-8 mb-3">
+                        <label for="validationServer01">환자성명</label>
+                        <input type="text" class="form-control is-valid" id="validationServer01" required> 
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <!-- 검색버튼 PC버전 -->
+                      <div class="col-md-4 mb-3 size_pc">
+                        <label class="text-transparent">검색</label>
+                        <button class="btn btn-block btn-primary" type="submit">검색</button>
+                      </div>
+                    </div>
+
+                    <!-- required valid example --> 
+                    <div class="form-row">
+                      <div class="col-md-4 mb-3">
+                        <label for="validationServer02">환자주민번호</label>
+                        <input type="text" class="form-control is-valid" id="validationServer02" aria-describedby="validationServer02Feedback" placeholder="●●●●●●" required>
+                        <div id="validationServer02Feedback" class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label class="text-transparent">뒷자리</label>
+                        <input type="text" class="form-control is-invalid" id="validationServer02_1" aria-describedby="validationServer02_1Feedback" placeholder="●●●●●●●" required>
+                        <div id="validationServer02_1Feedback" class="invalid-feedback">
+                          Please provide a valid name.
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 검색버튼 Mobile버전 -->
+                    <div class="form-row size_mb">
+                      <div class="col-md-12">
+                        <label class="text-transparent">검색</label>
+                        <button class="btn btn-block btn-primary" type="submit">검색</button>
+                      </div>
+                    </div>
+
+                    
+                    
+                    
+                  </form>
+
+
+                  <hr/>
+
+                  <!-- 결과 테이블 -->
+                  <div>
+
+                    <table class="table table-striped">
+                      <colgroup>
+                        <col width="19%">
+                        <col width="20%">
+                        <col width="12%">
+                        <col>
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>환자명</th>
+                          <th>생년월일</th>
+                          <th>성별</th>
+                          <th>주소</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>홍길동</td>
+                          <td>19880101</td>
+                          <td>M</td>
+                          <td>부산시 수성구 수성1로 수성아파트 1234호</td>
+                        </tr>
+                        <tr>
+                          <td>홍길동</td>
+                          <td>19880101</td>
+                          <td>M</td>
+                          <td>부산시 수성구 수성1로 수성아파트 1234호</td>
+                        </tr>
+                        <tr>
+                          <td>홍길동</td>
+                          <td>19880101</td>
+                          <td>M</td>
+                          <td>부산시 수성구 수성1로 수성아파트 1234호</td>
+                        </tr>
+                        <tr>
+                          <td>홍길동</td>
+                          <td>19880101</td>
+                          <td>M</td>
+                          <td>부산시 수성구 수성1로 수성아파트 1234호</td>
+                        </tr>
+                        <tr>
+                          <td>홍길동</td>
+                          <td>19880101</td>
+                          <td>M</td>
+                          <td>부산시 수성구 수성1로 수성아파트 1234호</td>
+                        </tr>
+                        <tr>
+                          <td>홍길동</td>
+                          <td>19880101</td>
+                          <td>M</td>
+                          <td>부산시 수성구 수성1로 수성아파트 1234호</td>
+                        </tr>
+                      </tbody>
+                      
+                    </table>
+
+
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+        
+        
+        
+                  </div>
+
+                
+
+                </div>
+              </div>
+
+
+            </div>
+          <!--  div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+          -->
+          </div>
+        </div>
 
       </div>
     </div>
-    <!-- END::PAGE CONTENTS -->
+
+
 
 
   </main>
@@ -438,7 +803,7 @@
   <!-- START::MAIN FOOTER -->
   <footer class="footer mt-auto py-3">
     <div class="container-lg text-center">
-      <span class="text-muted">2021 ⓒ Hiwebnet all rights reserved.</span>
+      <span class="text-muted">2021 ⓒ Hiwebnet all rights reserved. <a href="Privacy.html">Privacy</a></span>
     </div>
   </footer>
 <!-- END::MAIN FOOTER -->
